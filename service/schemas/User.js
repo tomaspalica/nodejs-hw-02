@@ -1,6 +1,6 @@
 import { Schema, model } from "mongoose";
 import bcrypt from "bcrypt";
-import { string } from "joi";
+
 const userSchema = new Schema({
   password: {
     type: String,

@@ -11,3 +11,7 @@ export const updateUser = (id, fields) => {
     { new: true }
   );
 };
+
+export const getUserByverificationToken = verificationToken => {
+	return User.findOne({ verificationToken: verificationToken });
+};

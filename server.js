@@ -1,5 +1,5 @@
 import { app } from "./app.js";
-
+import { sendAuthEmail } from "./controllers/users/sendAuthEmail.js";
 import { mongoose } from "mongoose";
 import "dotenv/config";
 const { DB_HOST: uriDb } = process.env;
@@ -15,4 +15,3 @@ connection
   .catch((err) =>
     console.log(`Server not running. Error message: ${err.message}`)
   );
-

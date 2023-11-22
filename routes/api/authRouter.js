@@ -6,6 +6,7 @@ import { login } from "../../controllers/users/login.js";
 import { registration } from "../../controllers/users/register.js";
 import authMiddleware from "../../middlewares/jwt.js";
 import { verifyUser } from "../../controllers/users/verifyUser.js";
+import { resendEmail } from "../../controllers/users/ResendEmail.js";
 
 const router = express.Router();
 
@@ -17,4 +18,5 @@ router.post("/logout", authMiddleware, LogOut);
 
 router.get("/current", authMiddleware, currentUser);
 router.get("/verify/:verificationToken", verifyUser);
+router.post("/verify", resendEmail);
 export { router };
