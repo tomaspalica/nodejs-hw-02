@@ -31,7 +31,7 @@ export const sendAuthEmail = (token) => {
     to: "p.suchodolska@spkowale.pl",
     subject: "Weryfikacja konta",
     text: `testowy email`,
-    html: `link do autoryzacji <a>http://localhost:3000/api/users/verify/:${token}</a>`,
+    html: `link do autoryzacji <a>http://localhost:3000/api/users/verify/${token}</a>`,
   };
 
   transporter
