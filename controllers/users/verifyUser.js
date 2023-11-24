@@ -3,8 +3,8 @@ import { User } from "../../service/schemas/User.js";
 export const verifyUser = async (req, res, next) => {
   const { verificationToken } = req.params;
   console.log(verificationToken);
-
-  const user = await User.findOne({ verificationToken });
+  const correctVerifyToken = await verificationToken.replace(":", "");
+  const user = await User.findOne({ verificationToken: correctVerifyToken });
   console.log(user);
 
   if (user) {
